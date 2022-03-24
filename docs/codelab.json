@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-03-24T10:13:58-03:00",
+  "id": "docs",
+  "duration": 2,
+  "title": "Documentação de APIs com o Readme",
+  "summary": "Documentação de APIs com o Readme",
+  "source": "doc-api-readme-swagger.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelabs",
+    "markdown"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/Vaivoa/doc-api-readme/issues",
+  "ga": "Google Analytics ID",
+  "url": "docs"
+}

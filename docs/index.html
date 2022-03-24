@@ -1,0 +1,183 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Documentação de APIs com o Readme</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid="Google Analytics ID"
+                  id="docs"
+                  title="Documentação de APIs com o Readme"
+                  environment="web"
+                  feedback-link="https://github.com/Vaivoa/doc-api-readme/issues">
+    
+      <google-codelab-step label="Início" duration="2">
+        <p>Já encerrou o desenvolvimento de suas APIs e precisou apresentar os resultados para algumas dessas pessoas?</p>
+<ul>
+<li>Cliente;</li>
+<li>Novos desenvolvedores que precisam entender a regra de negócio, ou mesmo para a</li>
+<li>Comunidade externa, de maneira pública.</li>
+</ul>
+<p>Com certeza a resposta será &#34;sim&#34; para pelo menos um desses. Então vem a sua mente usar o Swagger, e é isso, lá já temos os <em>endpoints,</em> com os verbos HTTP, os tipos de parâmetros, até mesmo autenticação. E sim, essa é uma ferramenta incrível, não temos dúvida.</p>
+<p class="image-container"><img alt="Swagger da Abordagem 2." src="img\\c7445e10ae0f0890.png"></p>
+<p>Mas e se você quisesse deixar claro a regra de negócio da sua API? Se fosse do seu interesse que quem estivesse fazendo chamadas para sua aplicação entendesse o porquê das coisas? Já sei, você pensaria em criar um blog explicando esses pontos? Ok, compreensível, mas lá do seu blog você permitirá que sejam feitas requisições para sua API?</p>
+<p>Aqui temos uma alternativa que facilita a apresentação do backend de maneira mais amigável, possibilita a geração de requisições para seus endpoints em diversas linguagens de programação e ainda fornece métricas sobre a utilização de sua documentação. Essa alternativa chama-se Readme. Nunca ouviu falar? Não tem problema, você vai poder acompanhar o tutorial mesmo assim.</p>
+<p class="image-container"><img alt="Documentação no Readme da abordagem 2." src="img\\4711e69425364428.png"></p>
+<p>Neste tutorial vamos aprender à fazer a publicação da documentação da sua API no Readme manualmente. Para isso vamos usar um projeto open source como exemplo, portanto você vai conseguir seguir o passo a passo para o caso de já ter um projeto pronto.</p>
+<p>E aí, ficou animado? Então vamos lá!</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="O Projeto" duration="0">
+        <p>Muitas vezes nos deparamos com projetos que já possuem alguma documentação, mas nem sempre com uma apresentação tão amigável a quem não é desenvolvedor. Para estes casos, o <a href="https://readme.com/" target="_blank">Readme</a> pode ser um bom aliado, já que além de documentação dos endpoints, permite</p>
+<ul>
+<li>testar endpoints</li>
+<li>inserir exemplos de request e response</li>
+<li>inserir textos explicativos com imagens e links</li>
+</ul>
+<p>Além de poder monitorar quais endpoints estão sendo mais buscados e que erros o usuários estão gerando ao fazer request. Provendo valiosos <em>insights</em> sobre pontos a serem melhorados.</p>
+<p>Para demonstrar a configuração e uso das ferramentas do <a href="https://readme.com/" target="_blank">Readme</a>, usaremos o projeto <strong>ServeRest.</strong></p>
+<p>O ServeRest é uma API REST que simula uma loja virtual com intuito de servir de material de estudos de testes de API. É um projeto open source disponível no repositório <a href="https://github.com/ServeRest/ServeRest" target="_blank">GitHub</a> e <a href="https://serverest.dev/" target="_blank">online</a></p>
+<p><a href="https://github.com/ServeRest/ServeRest" target="_blank">https://github.com/ServeRest/ServeRest</a></p>
+<p>Este projeto foi escolhido como estudo de caso por ser uma API relativamente pequena que permite explorar bem as ferramentas do <a href="https://readme.com/" target="_blank">Readme</a> além de já possuir alguma documentação em arquivo Swagger.</p>
+<aside class="special"><p> ⚠️ Para esta abordagem, é **IMPRESCINDÍVEL** que se tenha um arquivo de documentação Swagger ou OpenAPI em formato `.json` ou `.yaml`. </p>
+<p>Caso não possua este arquivo, avance para a próxima abordagem, onde será explicado como configurar o Swagger em um projeto para que este arquivo seja gerado automaticamente.</p>
+</aside>
+<p>Caso queira testar primeiramente a API sem ter que rodar localmente, acesse o <a href="https://serverest.dev/" target="_blank">link</a>. Nele é possível testar os endpoint através da documentação feita pelo Swagger, como na figura abaixo.</p>
+<p class="image-container"><img alt="Documentação gerada pelo Swagger" src="img\\16fddeb3fddfd5fc.png"></p>
+<p>Apesar de ser comum para um desenvolvedor, muitas vezes essa documentação não é intuitiva para um cliente ou até mesmo outros membros da equipe. Por isso, mostraremos nos próximos passos como melhorar esta apresentação.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Sua Primeira página no Readme" duration="0">
+        <p>Ao fazer o upload de seu arquivo Swagger ou OpenAPI, você irá se deparar com um popup lhe perguntando se gostaria de ver uma prévia de suas edições (1) ou seguir editando o arquivo (2):</p>
+<p>Vamos dar uma olhada então como ficou nossa página depois da importação, acessando &#34;Preview Your Changes&#34;.</p>
+<p class="image-container"><img alt="Untitled" src="img\\112f97c5cd972696.png"></p>
+<aside class="special"><p> ⚠️ **Como tornar a documentação pública:** Se este é o seu primeiro acesso ao readme, provavelmente você terá o acesso &#34;trial&#34; aos planos pagos. Para tornar a sua página de documentação acessível a qualquer um, você deve fazer o downgrade da página. Para isso, acesse seu projeto no **Dashboard**. Selecione **Project** &gt; **Configurations** &gt; **Upgrade Plan**. Na nova página que se abrirá, você deve selecionar o plano **Free**. Pronto! Agora você pode compartilhar livremente o link para sua documentação com qualquer um. </p>
+</aside>
+<p>Podemos ver já algumas coisas bacanas. No menu esquerdo vemos a página &#34;Getting Started With Your API&#34; (1), criada já por padrão. Logo abaixo, temos uma documentação básica da nossa API (2) de acordo com o que foi informado no arquivo JSON que importamos, e também temos em (3), no topo da página, algumas customizações que fizemos lá no início, como a logo (VAIVOA) e domínio (treinamento-readme.readme.io) personalizados.</p>
+<p class="image-container"><img alt="Untitled" src="img\\afd4cbc26f946707.png"></p>
+<p>Navegando pela página, temos o painel de busca, à direita, que permite que o cliente pesquise facilmente os endpoints de interesse; e, expandindo o menu à esquerda, vemos que todos os endpoints documentados foram importados com sucesso:</p>
+<p class="image-container"><img alt="Untitled" src="img\\b4df7b7c42f6293.png"></p>
+<p>Já podemos inclusive fazer alguns testes de requisição através do botão &#34;<em>Try It!</em>&#34; à direita. Por padrão, o readme gera os comandos de request para algumas linguagens como Shell, Node, Ruby e etc. E você pode utilizar dados de exemplo (caso tenham sido descritos previamente no arquivo JSON):</p>
+<p class="image-container"><img alt="Untitled" src="img\\cb254f798232897c.png"></p>
+<p class="image-container"><img alt="Untitled" src="img\\bdbb1f60af6c79ad.png"></p>
+<p>Ou entrar com seus próprios dados:</p>
+<p class="image-container"><img alt="Untitled" src="img\\5ab0d4be631ecae2.png"></p>
+<p class="image-container"><img alt="Untitled" src="img\\17352d02d535e75b.png"></p>
+<p>Ao clicar em &#34;<em>Try It!</em>&#34;, recebemos a reposta logo em baixo (figura à esquerda), e podemos ver também outros exemplos de resposta possíveis pelo endpoint (figura à direita).</p>
+<p class="image-container"><img alt="Untitled" src="img\\bc5b8e647ef5d1fe.png"></p>
+<p class="image-container"><img alt="Untitled" src="img\\f6de3b637e4a72b8.png"></p>
+<p>Vamos agora aprender como adicionar mais dados à estas páginas!</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Customizando a sua página no Readme" duration="0">
+        <p class="image-container"><img alt="Untitled" src="img\\2936b68200f19f7d.png"></p>
+<p>Na imagem, clicamos em &#34;<em>+ Category</em>&#34; (1) no menu de navegação de &#34;<em>API Reference</em>&#34; para criar uma nova sessão. Nesta sessão, clicamos no sinal de &#34;+&#34; para adicionar a nova página (2). Esta página pode ter seu nome e descrição alterados no topo da página (3).</p>
+<p>Vemos à direita os recursos disponíveis para tornar seu texto mais atrativo para o usuário. Tais como:</p>
+<ul>
+<li>Headers, para destacar títulos em sumários;</li>
+<li>Code snipets, caso seja necessário introduzir trechos de códigos;</li>
+<li>Callout, para trechos em destaque com flags de info, atenção e etc;</li>
+</ul>
+<p>Entre outras funcionalidades que tornarão sua documentação mais rica.</p>
+<p>Voltando à imagem acima, assim que terminar suas edições, é possível visualizar suas alterações clicando em &#34;<em>View page on site</em>&#34; no canto inferior direito da tela. Só não esqueça de salvar antes no canto superior direito!</p>
+<p>Bom, vamos dar uma olhada em uma página de Introdução construída no Readme:</p>
+<p class="image-container"><img alt="Untitled" src="img\\658b2bfa2d31dd69.png"></p>
+<p>Vemos que além da documentação da API, podemos inserir páginas contendo explicações e instruções para usuários que não estejam tão ambientados ao projeto, por exemplo. Este usuário poderá navegar facilmente por toda a sua documentação através do menu de páginas à esquerda e do sumário à esquerda (que mostra as sessões em que você dividiu sua página utilizando os &#34;<em>Headers</em>&#34;, lembra?).</p>
+<p>Agora é a sua vez!</p>
+<h2 is-upgraded>Criando uma página inicial</h2>
+<p>Na sessão API Reference, clique no ícone ao lado do nome da API ServeRest para criar uma nova página a nomeie &#34;Início&#34;.</p>
+<p class="image-container"><img alt="Untitled" src="img\\21fc5202af92a0af.png"></p>
+<p>Em seguida adicione os seguintes componentes ao corpo da página:</p>
+<ul>
+<li>[ ]  Um badge com um link para o <a href="https://github.com/ServeRest/ServeRest" target="_blank">repositório</a> do projeto utilizando a ferramenta <a href="https://shields.io/" target="_blank">Shields</a>.<img alt="Untitled" src="img\\5ac2553787f56d5e.png"></li>
+<li>[ ]  Uma breve descrição do projeto.</li>
+<li>[ ]  Um <em>Callout</em> do Readme informando a finalidade da sua documentação.<img alt="Untitled" src="img\\5c02c4ed4fdead01.png"></li>
+</ul>
+<p>Quando concluir, não se esqueça de salvar as alterações.</p>
+<p class="image-container"><img alt="Untitled" src="img\\c572f9839ed80469.png"></p>
+<h2 is-upgraded>Customizando páginas</h2>
+<p>Selecione a página &#34;Usuários&#34;, que representa um dos <em>Controllers</em> da API.</p>
+<p class="image-container"><img alt="Untitled" src="img\\56f03df65dc7be56.png"></p>
+<p>Note que esta página é gerada a partir do Swagger mas é possível customiza-la adicionando novos elementos.</p>
+<p>Adicione os seguintes componentes ao corpo da página:</p>
+<ul>
+<li>[ ]  Uma descrição da função do <em>Controller</em> Usuários.</li>
+<li>[ ]  Uma descrição dos atributos no modelo Usuário.</li>
+</ul>
+<p>Gostou destas customizações? No próximo tópico vamos ensinar a fazer algumas customizações de layout da página para tornar tudo mais profissional.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ajustes finos de layout" duration="0">
+        <p>Neste tópico o nosso objetivo é somente mostrar como tornar seu site mais profissional. Voltamos novamente à barra de navegação do projeto à direita e clicamos em &#34;<em>Appearance</em>&#34;. No menu, o único recurso que realmente nos interessa é o &#34;<em>Theme Editor</em>&#34;, que está disponível na versão gratuita.</p>
+<p class="image-container"><img alt="Untitled" src="img\\ca22518317592a39.png"></p>
+<p class="image-container"><img alt="Untitled" src="img\\12182e2626849e42.png"></p>
+<p>Nesta página encontramos recursos como: inserir logo, ícone de favoritos, mudar cor/imagem de fundo, cor da fonte e etc.</p>
+<p>Veja agora uma comparação entre a nossa página antes e depois das modificações.</p>
+<p class="image-container"><img alt="Untitled" src="img\\2a6b3f8c1151d519.png"></p>
+<p class="image-container"><img alt="Untitled" src="img\\688ce5508edb8f85.png"></p>
+<p>Já deu outra cara, não? 😉</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Outros recursos para explorar" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Versionamento" duration="0">
+        <p class="image-container"><img alt="Untitled" src="img\\b4f9f896f98e6fd3.png"></p>
+<p class="image-container"><img alt="Untitled" src="img\\12eeb1fa51d61e57.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Fórum de perguntas" duration="0">
+        <p>Na imagem abaixo, acessando &#34;<em>Page Views</em>&#34; por exemplo, conseguimos ver como se dá os acessos nas páginas de documentação em um certo período de tempo. Além de conseguir observar granularidades como quais usuários estão acessando mais a documentação e quais as páginas estão sendo mais vistas.</p>
+<p class="image-container"><img alt="Untitled" src="img\\16b63d75b98b0c4b.png"></p>
+<p>Nas métricas de &#34;<em>API Calls</em>&#34; também conseguimos tirar várias informações interessantes.</p>
+<p class="image-container"><img alt="Untitled" src="img\\14db98c57658056b.png"></p>
+<p>É possível checar quais endpoints estão sendo mais acessados, ou mais especificamente quais métodos (GET, POST, DELETE, etc). Também é possível observar se os usuários estão gerando muitos erros, gerando muitas respostas de código 400 ou não, entre outras possibilidades.</p>
+<p class="image-container"><img alt="Untitled" src="img\\e1f83c2149394303.png"></p>
+<p>E caso apareça algo muito estranho nos gráficos, você ainda pode averiguar mais detalhadamente quando estas respostas estão sendo geradas através dos logs registrados abaixo de cada gráfico.</p>
+<p class="image-container"><img alt="Untitled" src="img\\659a502b896f562d.png"></p>
+<p>Através dessas informações, é possível entender que usuários estão tendo mais dificuldades com a documentação ou quais páginas de repente precisam de mais detalhamento ou reformulação. Melhorando cada vez mais a documentação de sua API!</p>
+<p class="image-container"><img alt="Untitled" src="img\\fdab0a4376cf840b.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

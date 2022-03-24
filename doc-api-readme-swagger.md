@@ -1,4 +1,11 @@
-
+author: VaiVoa
+summary: Documentação de APIs com o Readme
+id: docs
+categories: codelabs,markdown
+environments: Web
+status: Published
+feedback link: https://github.com/Vaivoa/doc-api-readme/issues
+analytics account: Google Analytics ID
 <!-- (Abordagem 1 - Publicação no Readme.io a partir de um arquivo OpenAPI/Swagger) -->
 
 # Documentação de APIs com o Readme
