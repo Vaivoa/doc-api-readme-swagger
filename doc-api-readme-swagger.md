@@ -7,7 +7,7 @@ status: Published
 feedback link: https://github.com/Vaivoa/doc-api-readme-swagger/issues
 <!-- (Abordagem 1 - Publicação no Readme.io a partir de um arquivo OpenAPI/Swagger) -->
 
-# Publicação no Readme.io a partir de um arquivo OpenAPI/Swagger
+# Readme: Documentação de APIs a partir de um arquivo Swagger.
 
 ## Antes de Começar
 
