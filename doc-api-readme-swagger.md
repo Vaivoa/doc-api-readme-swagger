@@ -1,5 +1,5 @@
 author: VaiVoa
-summary: Documentação de APIs com o Readme
+summary: Publicação no Readme.io a partir de um arquivo OpenAPI/Swagger
 id: docs
 categories: codelabs,markdown
 environments: Web
@@ -7,7 +7,7 @@ status: Published
 feedback link: https://github.com/Vaivoa/doc-api-readme-swagger/issues
 <!-- (Abordagem 1 - Publicação no Readme.io a partir de um arquivo OpenAPI/Swagger) -->
 
-# Documentação de APIs com o Readme
+# Publicação no Readme.io a partir de um arquivo OpenAPI/Swagger
 
 ## Antes de Começar
 
