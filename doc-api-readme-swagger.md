@@ -11,7 +11,7 @@ feedback link: https://github.com/Vaivoa/doc-api-readme-swagger/issues
 
 ## Antes de Começar
 
-Duration: 1:28
+Duration: 2:30
 
 Já encerrou o desenvolvimento de suas APIs e precisou apresentar os resultados para algumas dessas pessoas? 
 
@@ -52,6 +52,8 @@ E aí, ficou animado? Então vamos lá!
 
 ## O Projeto
 
+Duration: 2:20
+
 Muitas vezes nos deparamos com projetos que já possuem alguma documentação, mas nem sempre com uma apresentação tão amigável a quem não é desenvolvedor. Para estes casos, o [Readme](https://readme.com/) pode ser um bom aliado, já que além de documentação dos endpoints, permite
 
 - testar endpoints
@@ -84,6 +86,8 @@ Apesar de ser comum para um desenvolvedor, muitas vezes essa documentação não
 
 ## Primeiros Setups do Readme
 
+Duration: 2:20
+
 Primeiramente, precisamos de uma conta na plataforma. Neste curso, utilizaremos a opção gratuita mesmo, que já atende às nossas necessidades.
 
 Acesse [readme.com](http://readme.com) e realize o cadastro, caso não possua conta:
@@ -115,7 +119,7 @@ Ambos os caminhos expostos levam à página de upload, onde escolheremos em noss
 
 ![Untitled](assets/25.png)
 
-## Observações quanto ao arquivo Swagger e o domínio da API
+### Observações quanto ao arquivo Swagger e o domínio da API
 
 No projeto em questão (ServeRest), temos o arquivo Swagger no caminho `./docs/swagger.json`, partindo da raiz do projeto.
 
@@ -146,8 +150,9 @@ Portanto, devemos modificar esta linha para `"host": "serverest.dev"` ou algum o
 Veremos nos próximos tópicos como ficará a sua página e como customizar ainda mais a sua página no Readme!
 
 
-
 ## Sua Primeira página no Readme
+
+Duration: 2:40
 
 Ao fazer o upload de seu arquivo Swagger ou OpenAPI, você irá se deparar com um popup lhe perguntando se gostaria de ver uma prévia de suas edições (1) ou seguir editando o arquivo (2):
 
@@ -187,6 +192,8 @@ Vamos agora aprender como adicionar mais dados à estas páginas!
 
 
 ## Customizando a sua página no Readme
+
+Duration: 4:20
 
 Voltando ao dashboard [https://dash.readme.com](https://dash.readme.com/), você deve ver um quadro com seus projetos, caso esteja logado. Vamos acessar o nosso projeto de teste novamente e navegar pelo menu à esquerda da tela, clicando em “*API Reference*”. Com isso, se abrirá um menu com todas as páginas de documentação criadas.
 
@@ -265,6 +272,8 @@ Gostou destas customizações? No próximo tópico vamos ensinar a fazer algumas
 
 ## Ajustes finos de layout
 
+Duration: 1:00
+
 Neste tópico o nosso objetivo é somente mostrar como tornar seu site mais profissional. Voltamos novamente à barra de navegação do projeto à direita e clicamos em “*Appearance*”. No menu, o único recurso que realmente nos interessa é o “*Theme Editor*”, que está disponível na versão gratuita.
 
 ![Untitled](assets/51.png) ![Untitled](assets/52.png)
@@ -314,6 +323,8 @@ Através dessas informações, é possível entender que usuários estão tendo 
 ![Untitled](assets/67.png) -->
 
 ## Conclusão
+
+Duration: 1:00
 
 Parabéns! Você concluiu mais um treinamento e agora está preparado para criar uma documentação profissional com o Readme e melhorar a experiência dos usuários da sua API.
 
