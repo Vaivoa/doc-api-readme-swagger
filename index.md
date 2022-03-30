@@ -50,6 +50,7 @@ E aí, ficou animado? Então vamos lá!
 - Um projeto existente com um arquivo de documentação Swagger ou OpenAPI.
 
 
+
 ## O Projeto
 
 Duration: 2:20
