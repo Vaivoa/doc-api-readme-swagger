@@ -27,7 +27,7 @@
                   environment="web"
                   feedback-link="https://github.com/Vaivoa/doc-api-readme-swagger/issues">
     
-      <google-codelab-step label="Antes de Começar" duration="2">
+      <google-codelab-step label="Antes de Começar" duration="3">
         <p>Já encerrou o desenvolvimento de suas APIs e precisou apresentar os resultados para algumas dessas pessoas?</p>
 <ul>
 <li>Cliente;</li>
@@ -35,10 +35,10 @@
 <li>Comunidade externa, de maneira pública.</li>
 </ul>
 <p>Com certeza a resposta será &#34;sim&#34; para pelo menos um desses. Então vem a sua mente usar o Swagger, e é isso, lá já temos os <em>endpoints,</em> com os verbos HTTP, os tipos de parâmetros, até mesmo autenticação. E sim, essa é uma ferramenta incrível, não temos dúvida.</p>
-<p class="image-container"><img alt="Swagger da Abordagem 2." src="img\\48e2b7e5251e6471.png"></p>
+<p class="image-container"><img alt="Swagger da Abordagem 2." src="img/48e2b7e5251e6471.png"></p>
 <p>Mas e se você quisesse deixar claro a regra de negócio da sua API? Se fosse do seu interesse que quem estivesse fazendo chamadas para sua aplicação entendesse o porquê das coisas? Já sei, você pensaria em criar um blog explicando esses pontos? Ok, compreensível, mas lá do seu blog você permitirá que sejam feitas requisições para sua API?</p>
 <p>Aqui temos uma alternativa que facilita a apresentação do backend de maneira mais amigável, possibilita a geração de requisições para seus endpoints em diversas linguagens de programação e ainda fornece métricas sobre a utilização de sua documentação. Essa alternativa chama-se Readme. Nunca ouviu falar? Não tem problema, você vai poder acompanhar o tutorial mesmo assim.</p>
-<p class="image-container"><img alt="Documentação no Readme da abordagem 2." src="img\\4711e69425364428.png"></p>
+<p class="image-container"><img alt="Documentação no Readme da abordagem 2." src="img/4711e69425364428.png"></p>
 <p>Neste tutorial vamos aprender à fazer a publicação da documentação da sua API no Readme manualmente. Para isso vamos usar um projeto open source como exemplo, portanto você vai conseguir seguir o passo a passo para o caso de já ter um projeto pronto.</p>
 <p>E aí, ficou animado? Então vamos lá!</p>
 <h2 is-upgraded>O que você vai criar</h2>
@@ -61,7 +61,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="O Projeto" duration="0">
+      <google-codelab-step label="O Projeto" duration="3">
         <p>Muitas vezes nos deparamos com projetos que já possuem alguma documentação, mas nem sempre com uma apresentação tão amigável a quem não é desenvolvedor. Para estes casos, o <a href="https://readme.com/" target="_blank">Readme</a> pode ser um bom aliado, já que além de documentação dos endpoints, permite</p>
 <ul>
 <li>testar endpoints</li>
@@ -73,37 +73,32 @@
 <p>O ServeRest é uma API REST que simula uma loja virtual com intuito de servir de material de estudos de testes de API. É um projeto open source disponível no repositório <a href="https://github.com/ServeRest/ServeRest" target="_blank">GitHub</a> e <a href="https://serverest.dev/" target="_blank">online</a></p>
 <p><a href="https://github.com/ServeRest/ServeRest" target="_blank">Repositório do ServeRest</a></p>
 <p>Este projeto foi escolhido como estudo de caso por ser uma API relativamente pequena que permite explorar bem as ferramentas do <a href="https://readme.com/" target="_blank">Readme</a> além de já possuir alguma documentação em arquivo Swagger.</p>
-<aside class="special"><p> ⚠️ Para esta abordagem, é IMPRESCINDÍVEL que se tenha um arquivo de documentação Swagger ou OpenAPI em formato `.json` ou `.yaml`. </p>
-<p>Caso não possua este arquivo, avance para a próxima abordagem, onde será explicado como configurar o Swagger em um projeto para que este arquivo seja gerado automaticamente.</p>
+<aside class="special"><p> ⚠️ Para esta abordagem, é IMPRESCINDÍVEL que se tenha um arquivo de documentação Swagger ou OpenAPI em formato `.json` ou `.yaml`.  Caso não possua este arquivo, avance para a próxima abordagem, onde será explicado como configurar o Swagger em um projeto para que este arquivo seja gerado automaticamente.  </p>
 </aside>
 <p>Caso queira testar primeiramente a API sem ter que rodar localmente, acesse o <a href="https://serverest.dev/" target="_blank">link</a>. Nele é possível testar os endpoint através da documentação feita pelo Swagger, como na figura abaixo.</p>
-<p class="image-container"><img alt="Documentação gerada pelo Swagger" src="img\\16fddeb3fddfd5fc.png"></p>
+<p class="image-container"><img alt="Documentação gerada pelo Swagger" src="img/16fddeb3fddfd5fc.png"></p>
 <p>Apesar de ser comum para um desenvolvedor, muitas vezes essa documentação não é intuitiva para um cliente ou até mesmo outros membros da equipe. Por isso, mostraremos nos próximos passos como melhorar esta apresentação.</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Primeiros Setups do Readme" duration="0">
+      <google-codelab-step label="Primeiros Setups do Readme" duration="3">
         <p>Primeiramente, precisamos de uma conta na plataforma. Neste curso, utilizaremos a opção gratuita mesmo, que já atende às nossas necessidades.</p>
 <p>Acesse <a href="http://readme.com" target="_blank">readme.com</a> e realize o cadastro, caso não possua conta:</p>
-<p class="image-container"><img alt="Untitled" src="img\\d460141c4feb45d4.png"></p>
+<p class="image-container"><img alt="Untitled" src="img/d460141c4feb45d4.png"></p>
 <p>Já na página seguinte, é possível realizar as primeiras configurações de seu primeiro projeto:</p>
-<p class="image-container"><img alt="Untitled" src="img\\4be84060c1baeb53.png"></p>
+<p class="image-container"><img alt="Untitled" src="img/4be84060c1baeb53.png"></p>
 <p>Escolhendo o nome do projeto (1); um subdomínio para o fácil acesso do cliente (2); o tipo do projeto (3), já que a plataforma permite a documentação não só de APIs REST; e até uma logo personalizada que será disposta no canto superior esquerdo.</p>
 <p>Agora temos acesso à página de projeto. Com isso, podemos fazer o upload do arquivo Swagger/OpenAPI.</p>
-<p>Clicando em &#34;<em>Dashboard</em>&#34; no menu à esquerda (1), depois em &#34;<em>Import Your API</em>&#34; (2) e por fim em &#34;<em>OpenAPI Upload</em>&#34; (3):</p>
-<p class="image-container"><img alt="Untitled" src="img\\ef011fe920a33924.png"></p>
-<p>Ou, seguindo outro caminho, clicamos em &#34;<em>API Reference</em>&#34; (1), depois em &#34;<em>+ API</em>&#34; (2) e por fim em &#34;<em>OpenAPI Upload</em>&#34; (3):</p>
-<p class="image-container"><img alt="Untitled" src="img\\496a1bcd34f0db7a.png"></p>
-<p>Note que, podemos posteriormente fazer o upload de outras APIs, desde que cliquemos em &#34;<em>+ API</em>&#34;.</p>
+<p>Clicando em &#34;*Dashboard*&#34; no menu à esquerda (1), depois em &#34;*Import Your API*&#34; (2) e por fim em &#34;*OpenAPI Upload*&#34; (3):</p>
+<p class="image-container"><img alt="Untitled" src="img/ef011fe920a33924.png"></p>
+<p>Ou, seguindo outro caminho, clicamos em &#34;*API Reference<em>&#34; (1), depois em &#34;</em>+ API*&#34; (2) e por fim em &#34;*OpenAPI Upload*&#34; (3):</p>
+<p class="image-container"><img alt="Untitled" src="img/496a1bcd34f0db7a.png"></p>
+<p>Note que, podemos posteriormente fazer o upload de outras APIs, desde que cliquemos em &#34;*+ API*&#34;.</p>
 <p>Ambos os caminhos expostos levam à página de upload, onde escolheremos em nossa máquina o arquivo Swagger que desejamos:</p>
-<p class="image-container"><img alt="Untitled" src="img\\626d02a5bd76c293.png"></p>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Observações quanto ao arquivo Swagger e o domínio da API" duration="0">
-        <p>No projeto em questão (ServeRest), temos o arquivo Swagger no caminho <code>./docs/swagger.json</code>, partindo da raiz do projeto.</p>
+<p class="image-container"><img alt="Untitled" src="img/626d02a5bd76c293.png"></p>
+<h2 is-upgraded>Observações quanto ao arquivo Swagger e o domínio da API</h2>
+<p>No projeto em questão (ServeRest), temos o arquivo Swagger no caminho <code>./docs/swagger.json</code>, partindo da raiz do projeto.</p>
 <p>Nas primeiras linhas deste arquivo, temos a tag <code>"host": "localhost:3000"</code>. Esta tag faz sentido quando queremos testar a API localmente, porém, o Readme não tem acesso à máquina local.</p>
 <p>Portanto, devemos modificar esta linha para <code>"host": "serverest.dev"</code> ou algum outro domínio online para que possamos testar a resposta dos endpoints depois.</p>
 <pre><code language="language-json" class="language-json">{
@@ -129,37 +124,37 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Sua Primeira página no Readme" duration="0">
+      <google-codelab-step label="Sua Primeira página no Readme" duration="3">
         <p>Ao fazer o upload de seu arquivo Swagger ou OpenAPI, você irá se deparar com um popup lhe perguntando se gostaria de ver uma prévia de suas edições (1) ou seguir editando o arquivo (2):</p>
 <p>Vamos dar uma olhada então como ficou nossa página depois da importação, acessando &#34;Preview Your Changes&#34;.</p>
-<p class="image-container"><img alt="Untitled" src="img\\112f97c5cd972696.png"></p>
-<aside class="special"><p> ⚠️ <strong>Como tornar a documentação pública:</strong> Se este é o seu primeiro acesso ao readme, provavelmente você terá o acesso &#34;trial&#34; aos planos pagos. Para tornar a sua página de documentação acessível a qualquer um, você deve fazer o downgrade da página. Para isso, acesse seu projeto no <strong>Dashboard</strong>. Selecione <strong>Project</strong> &gt; <strong>Configurations</strong> &gt; <strong>Upgrade Plan</strong> Na nova página que se abrirá, você deve selecionar o plano <strong>Free</strong>. Pronto! Agora você pode compartilhar livremente o link para sua documentação com qualquer um. </p>
+<p class="image-container"><img alt="Untitled" src="img/112f97c5cd972696.png"></p>
+<aside class="special"><p> ⚠️ <strong>Como tornar a documentação pública:</strong> Se este é o seu primeiro acesso ao readme, provavelmente você terá o acesso &#34;trial&#34; aos planos pagos. Para tornar a sua página de documentação acessível a qualquer um, você deve fazer o downgrade da página. Para isso, acesse seu projeto no <strong>Dashboard</strong>. Selecione <strong>Project</strong> &gt; <strong>Configurations</strong> &gt; <strong>Upgrade Plan</strong> Na nova página que se abrirá, você deve selecionar o plano <strong>Free</strong>. Pronto! Agora você pode compartilhar livremente o link para sua documentação com qualquer um.  </p>
 </aside>
 <p>Podemos ver já algumas coisas bacanas. No menu esquerdo vemos a página &#34;Getting Started With Your API&#34; (1), criada já por padrão. Logo abaixo, temos uma documentação básica da nossa API (2) de acordo com o que foi informado no arquivo JSON que importamos, e também temos em (3), no topo da página, algumas customizações que fizemos lá no início, como a logo (VAIVOA) e domínio (treinamento-readme.readme.io) personalizados.</p>
-<p class="image-container"><img alt="Untitled" src="img\\afd4cbc26f946707.png"></p>
+<p class="image-container"><img alt="Untitled" src="img/afd4cbc26f946707.png"></p>
 <p>Navegando pela página, temos o painel de busca, à direita, que permite que o cliente pesquise facilmente os endpoints de interesse; e, expandindo o menu à esquerda, vemos que todos os endpoints documentados foram importados com sucesso:</p>
-<p class="image-container"><img alt="Untitled" src="img\\b4df7b7c42f6293.png"></p>
-<p>Já podemos inclusive fazer alguns testes de requisição através do botão &#34;<em>Try It!</em>&#34; à direita. Por padrão, o readme gera os comandos de request para algumas linguagens como Shell, Node, Ruby e etc. E você pode utilizar dados de exemplo (caso tenham sido descritos previamente no arquivo JSON):</p>
-<p class="image-container"><img alt="Untitled" src="img\\cb254f798232897c.png"> <img alt="Untitled" src="img\\bdbb1f60af6c79ad.png"></p>
+<p class="image-container"><img alt="Untitled" src="img/b4df7b7c42f6293.png"></p>
+<p>Já podemos inclusive fazer alguns testes de requisição através do botão &#34;*Try It!*&#34; à direita. Por padrão, o readme gera os comandos de request para algumas linguagens como Shell, Node, Ruby e etc. E você pode utilizar dados de exemplo (caso tenham sido descritos previamente no arquivo JSON):</p>
+<p class="image-container"><img alt="Untitled" src="img/cb254f798232897c.png"> <img alt="Untitled" src="img/bdbb1f60af6c79ad.png"></p>
 <p>Ou entrar com seus próprios dados:</p>
-<p class="image-container"><img alt="Untitled" src="img\\5ab0d4be631ecae2.png"> <img alt="Untitled" src="img\\17352d02d535e75b.png"></p>
-<p>Ao clicar em &#34;<em>Try It!</em>&#34;, recebemos a reposta logo em baixo (figura à esquerda), e podemos ver também outros exemplos de resposta possíveis pelo endpoint (figura à direita).</p>
-<p class="image-container"><img alt="Untitled" src="img\\bc5b8e647ef5d1fe.png"> <img alt="Untitled" src="img\\f6de3b637e4a72b8.png"></p>
+<p class="image-container"><img alt="Untitled" src="img/5ab0d4be631ecae2.png"> <img alt="Untitled" src="img/17352d02d535e75b.png"></p>
+<p>Ao clicar em &#34;*Try It!*&#34;, recebemos a reposta logo em baixo (figura à esquerda), e podemos ver também outros exemplos de resposta possíveis pelo endpoint (figura à direita).</p>
+<p class="image-container"><img alt="Untitled" src="img/bc5b8e647ef5d1fe.png"> <img alt="Untitled" src="img/f6de3b637e4a72b8.png"></p>
 <p>Vamos agora aprender como adicionar mais dados à estas páginas!</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Customizando a sua página no Readme" duration="0">
-        <p>Voltando ao dashboard <a href="https://dash.readme.com/" target="_blank">https://dash.readme.com</a>, você deve ver um quadro com seus projetos, caso esteja logado. Vamos acessar o nosso projeto de teste novamente e navegar pelo menu à esquerda da tela, clicando em &#34;<em>API Reference</em>&#34;. Com isso, se abrirá um menu com todas as páginas de documentação criadas.</p>
-<p class="image-container"><img alt="Untitled" src="img\\2936b68200f19f7d.png"> <img alt="Untitled" src="img\\658b2bfa2d31dd69.png"> <img alt="Untitled" src="img\\21fc5202af92a0af.png"></p>
+      <google-codelab-step label="Customizando a sua página no Readme" duration="5">
+        <p>Voltando ao dashboard <a href="https://dash.readme.com/" target="_blank">https://dash.readme.com</a>, você deve ver um quadro com seus projetos, caso esteja logado. Vamos acessar o nosso projeto de teste novamente e navegar pelo menu à esquerda da tela, clicando em &#34;*API Reference*&#34;. Com isso, se abrirá um menu com todas as páginas de documentação criadas.</p>
+<p class="image-container"><img alt="Untitled" src="img/2936b68200f19f7d.png"> <img alt="Untitled" src="img/658b2bfa2d31dd69.png"> <img alt="Untitled" src="img/21fc5202af92a0af.png"></p>
 <p>A plataforma readme permite a criação de páginas adicionais para a sua documentação, além de customizar as páginas existentes geradas na importação do Swagger. A criação, edição e remoção de páginas é bem simples, bastando clicar na página de interesse para editá-la ou mover o cursor sobre ela para ter opções como: adicionar subpágina, clonar e deletar página.</p>
 <p>As paginas são feitas utilizando Markdown, mas é possível também incorporar elementos gráficos como tabelas e imagens diretamente pela plataforma Readme.</p>
-<aside class="special"><p> ⚠️ Uma das limitações de se importar um arquivo Swagger ou OpenAPI já pronto é que não podemos editar as saídas ou entradas de endpoints ou adicionar/editar exemplos de request e response, por exemplo. Porém ainda podemos fornecer texto adicional às páginas dos endpoints, caso a documentação via Swagger esteja incompleta. </p>
+<aside class="special"><p> ⚠️ Uma das limitações de se importar um arquivo Swagger ou OpenAPI já pronto é que não podemos editar as saídas ou entradas de endpoints ou adicionar/editar exemplos de request e response, por exemplo. Porém ainda podemos fornecer texto adicional às páginas dos endpoints, caso a documentação via Swagger esteja incompleta.  </p>
 </aside>
 <p>Ao criar uma nova página, vemos a seguinte tela:</p>
-<p class="image-container"><img alt="Untitled" src="img\\c71809e9a12f4f49.png"></p>
-<p>Na imagem, clicamos em &#34;<em>+ Category</em>&#34; (1) no menu de navegação de &#34;<em>API Reference</em>&#34; para criar uma nova sessão. Nesta sessão, clicamos no sinal de &#34;+&#34; para adicionar a nova página (2). Esta página pode ter seu nome e descrição alterados no topo da página (3).</p>
+<p class="image-container"><img alt="Untitled" src="img/c71809e9a12f4f49.png"></p>
+<p>Na imagem, clicamos em &#34;*+ Category*&#34; (1) no menu de navegação de &#34;*API Reference*&#34; para criar uma nova sessão. Nesta sessão, clicamos no sinal de &#34;+&#34; para adicionar a nova página (2). Esta página pode ter seu nome e descrição alterados no topo da página (3).</p>
 <p>Vemos à direita os recursos disponíveis para tornar seu texto mais atrativo para o usuário. Tais como:</p>
 <ul>
 <li>Headers, para destacar títulos em sumários;</li>
@@ -167,28 +162,28 @@
 <li>Callout, para trechos em destaque com flags de info, atenção e etc;</li>
 </ul>
 <p>Entre outras funcionalidades que tornarão sua documentação mais rica.</p>
-<p>Voltando à imagem acima, assim que terminar suas edições, é possível visualizar suas alterações clicando em &#34;<em>View page on site</em>&#34; no canto inferior direito da tela. Só não esqueça de salvar antes no canto superior direito!</p>
+<p>Voltando à imagem acima, assim que terminar suas edições, é possível visualizar suas alterações clicando em &#34;*View page on site*&#34; no canto inferior direito da tela. Só não esqueça de salvar antes no canto superior direito!</p>
 <p>Bom, vamos dar uma olhada em uma página de Introdução construída no Readme:</p>
-<p class="image-container"><img alt="Untitled" src="img\\5ac2553787f56d5e.png"></p>
-<p>Vemos que além da documentação da API, podemos inserir páginas contendo explicações e instruções para usuários que não estejam tão ambientados ao projeto, por exemplo. Este usuário poderá navegar facilmente por toda a sua documentação através do menu de páginas à esquerda e do sumário à esquerda (que mostra as sessões em que você dividiu sua página utilizando os &#34;<em>Headers</em>&#34;, lembra?).</p>
+<p class="image-container"><img alt="Untitled" src="img/5ac2553787f56d5e.png"></p>
+<p>Vemos que além da documentação da API, podemos inserir páginas contendo explicações e instruções para usuários que não estejam tão ambientados ao projeto, por exemplo. Este usuário poderá navegar facilmente por toda a sua documentação através do menu de páginas à esquerda e do sumário à esquerda (que mostra as sessões em que você dividiu sua página utilizando os &#34;*Headers*&#34;, lembra?).</p>
 <p>Agora é a sua vez!</p>
 <h2 is-upgraded>Criando uma página inicial</h2>
 <p>Na sessão API Reference, clique no ícone ao lado do nome da API ServeRest para criar uma nova página a nomeie &#34;Início&#34;.</p>
-<p class="image-container"><img alt="Untitled" src="img\\5c02c4ed4fdead01.png"></p>
+<p class="image-container"><img alt="Untitled" src="img/5c02c4ed4fdead01.png"></p>
 <p>Em seguida adicione os seguintes componentes ao corpo da página:</p>
 <ul>
 <li>Um badge com um link para o <a href="https://github.com/ServeRest/ServeRest" target="_blank">repositório</a> do projeto utilizando a ferramenta <a href="https://shields.io/" target="_blank">Shields</a>.</li>
 </ul>
-<p class="image-container"><img alt="Untitled" src="img\\14531dee8c28c35b.png"></p>
+<p class="image-container"><img alt="Untitled" src="img/14531dee8c28c35b.png"></p>
 <ul>
 <li>Uma breve descrição do projeto.</li>
-<li>Um <em>Callout</em> do Readme informando a finalidade da sua documentação.<img alt="Untitled" src="img\\c572f9839ed80469.png"></li>
+<li>Um <em>Callout</em> do Readme informando a finalidade da sua documentação.  <img alt="Untitled" src="img/c572f9839ed80469.png"></li>
 </ul>
 <p>Quando concluir, não se esqueça de salvar as alterações.</p>
-<p class="image-container"><img alt="Untitled" src="img\\56f03df65dc7be56.png"></p>
+<p class="image-container"><img alt="Untitled" src="img/56f03df65dc7be56.png"></p>
 <h2 is-upgraded>Customizando páginas</h2>
 <p>Selecione a página &#34;Usuários&#34;, que representa um dos <em>Controllers</em> da API.</p>
-<p class="image-container"><img alt="Untitled" src="img\\b3ab182475d6d60c.png"></p>
+<p class="image-container"><img alt="Untitled" src="img/b3ab182475d6d60c.png"></p>
 <p>Note que esta página é gerada a partir do Swagger mas é possível customiza-la adicionando novos elementos.</p>
 <p>Adicione os seguintes componentes ao corpo da página:</p>
 <ul>
@@ -200,19 +195,19 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Ajustes finos de layout" duration="0">
-        <p>Neste tópico o nosso objetivo é somente mostrar como tornar seu site mais profissional. Voltamos novamente à barra de navegação do projeto à direita e clicamos em &#34;<em>Appearance</em>&#34;. No menu, o único recurso que realmente nos interessa é o &#34;<em>Theme Editor</em>&#34;, que está disponível na versão gratuita.</p>
-<p class="image-container"><img alt="Untitled" src="img\\ca22518317592a39.png"> <img alt="Untitled" src="img\\12182e2626849e42.png"></p>
+      <google-codelab-step label="Ajustes finos de layout" duration="1">
+        <p>Neste tópico o nosso objetivo é somente mostrar como tornar seu site mais profissional. Voltamos novamente à barra de navegação do projeto à direita e clicamos em &#34;*Appearance*&#34;. No menu, o único recurso que realmente nos interessa é o &#34;*Theme Editor*&#34;, que está disponível na versão gratuita.</p>
+<p class="image-container"><img alt="Untitled" src="img/ca22518317592a39.png"> <img alt="Untitled" src="img/12182e2626849e42.png"></p>
 <p>Nesta página encontramos recursos como: inserir logo, ícone de favoritos, mudar cor/imagem de fundo, cor da fonte e etc.</p>
 <p>Veja agora uma comparação entre a nossa página antes e depois das modificações.</p>
-<p class="image-container"><img alt="Untitled" src="img\\2a6b3f8c1151d519.png"></p>
-<p class="image-container"><img alt="Untitled" src="img\\688ce5508edb8f85.png"></p>
+<p class="image-container"><img alt="Untitled" src="img/2a6b3f8c1151d519.png"></p>
+<p class="image-container"><img alt="Untitled" src="img/688ce5508edb8f85.png"></p>
 <p>Já deu outra cara, não? 😉</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Conclusão" duration="0">
+      <google-codelab-step label="Conclusão" duration="1">
         <p>Parabéns! Você concluiu mais um treinamento e agora está preparado para criar uma documentação profissional com o Readme e melhorar a experiência dos usuários da sua API.</p>
 <h2 is-upgraded>Saiba mais</h2>
 <ul>

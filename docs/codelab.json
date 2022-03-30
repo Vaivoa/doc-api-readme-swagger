@@ -3,12 +3,12 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2022-03-28T10:29:04-03:00",
+  "updated": "2022-03-30T11:52:05-03:00",
   "id": "docs",
-  "duration": 2,
+  "duration": 19,
   "title": "Readme: Documentação de APIs a partir de um arquivo Swagger.",
   "summary": "Publicação no Readme.io a partir de um arquivo OpenAPI/Swagger",
-  "source": "doc-api-readme-swagger.md",
+  "source": "index.md",
   "theme": "",
   "status": [
     "published"
